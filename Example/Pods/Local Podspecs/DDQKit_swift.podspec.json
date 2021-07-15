@@ -1,0 +1,22 @@
+{
+  "name": "DDQKit_swift",
+  "version": "0.1.0",
+  "summary": "A short description of DDQKit_swift.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/MyNameDDQ/DDQKit_swift",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "MyNameDDQ": "ddq107038@163.com"
+  },
+  "source": {
+    "git": "https://github.com/MyNameDDQ/DDQKit_swift.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "DDQKit_swift/Classes/**/*"
+}
