@@ -1,98 +1,20 @@
 PODS:
-  - AFNetworking (4.0.1):
-    - AFNetworking/NSURLSession (= 4.0.1)
-    - AFNetworking/Reachability (= 4.0.1)
-    - AFNetworking/Security (= 4.0.1)
-    - AFNetworking/Serialization (= 4.0.1)
-    - AFNetworking/UIKit (= 4.0.1)
-  - AFNetworking/NSURLSession (4.0.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (4.0.1)
-  - AFNetworking/Security (4.0.1)
-  - AFNetworking/Serialization (4.0.1)
-  - AFNetworking/UIKit (4.0.1):
-    - AFNetworking/NSURLSession
-  - DDQKit_swift (0.1.0):
-    - AFNetworking
-    - FDFullscreenPopGesture
-    - HandyJSON
-    - IQKeyboardManagerSwift
-    - MBProgressHUD
-    - MJRefresh
-    - SAMKeychain
-    - SDWebImage
-    - SnapKit
-    - SwiftLint
-    - SwiftyJSON
-    - YYKit
   - FBSnapshotTestCase (2.1.4):
     - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - FDFullscreenPopGesture (1.1)
-  - HandyJSON (5.0.2)
-  - IQKeyboardManagerSwift (6.5.6)
-  - MBProgressHUD (1.2.0)
-  - MJRefresh (3.7.2)
-  - SAMKeychain (1.5.3)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
-  - SnapKit (4.2.0)
-  - SwiftLint (0.43.1)
-  - SwiftyJSON (5.0.1)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - DDQKit_swift (from `https://github.com/MyNameDDQ/DDQKit_swift`)
   - FBSnapshotTestCase (~> 2.1.4)
 
 SPEC REPOS:
   trunk:
-    - AFNetworking
     - FBSnapshotTestCase
-    - FDFullscreenPopGesture
-    - HandyJSON
-    - IQKeyboardManagerSwift
-    - MBProgressHUD
-    - MJRefresh
-    - SAMKeychain
-    - SDWebImage
-    - SnapKit
-    - SwiftLint
-    - SwiftyJSON
-    - YYKit
-
-EXTERNAL SOURCES:
-  DDQKit_swift:
-    :git: https://github.com/MyNameDDQ/DDQKit_swift
-
-CHECKOUT OPTIONS:
-  DDQKit_swift:
-    :commit: 45649c64a7a04c97b3d50c674ed0ba1f5088a807
-    :git: https://github.com/MyNameDDQ/DDQKit_swift
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  DDQKit_swift: a99c20c6a8127cb5e1f79741c4f02047db118d6c
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
-  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: 30997d30b347c8e9508a4db11e3a690da0c9b85a
-  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
-  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: ae75745bade07f057660d29dc14354eefc0adfe5
+PODFILE CHECKSUM: 8acd31a59b558b98ed41a6533c9fc22f9656e0ef
 
 COCOAPODS: 1.10.1
