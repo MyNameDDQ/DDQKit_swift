@@ -1,5 +1,4 @@
 import XCTest
-import DDQKit_swift
 
 class Tests: XCTestCase {
     

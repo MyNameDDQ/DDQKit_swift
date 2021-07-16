@@ -3,7 +3,7 @@ use_frameworks!
 platform :ios, '9.0'
 
 target 'DDQKit_swift_Example' do
-  pod 'DDQKit_swift', :path => '../'
+  pod 'DDQKit_swift', :git => 'https://github.com/MyNameDDQ/DDQKit_swift'
   
   target 'DDQKit_swift_Tests' do
     inherit! :search_paths

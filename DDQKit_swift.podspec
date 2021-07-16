@@ -27,6 +27,7 @@ Swift coding repository
   s.source           = { :git => 'https://github.com/MyNameDDQ/DDQKit_swift.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
+  s.swift_version = '4.2'
 
   s.source_files = 'DDQKit_swift/Classes/**/*'
   

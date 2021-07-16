@@ -1,0 +1,6 @@
+framework module DDQKit_swift {
+  umbrella header "DDQKit_swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
