@@ -7,7 +7,7 @@
 
 import MBProgressHUD
 
-extension MBProgressHUD {
+public extension MBProgressHUD {
    
     static var ddqDefaultShowTimeInterval: TimeInterval {
         return 1.5

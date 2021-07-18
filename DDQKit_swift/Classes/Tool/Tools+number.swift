@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension Int {
+public extension Int {
     func ddqToCGFloat() -> CGFloat {
         return CGFloat(self)
     }
@@ -47,7 +47,7 @@ extension Int {
     }
 }
 
-extension Double {
+public extension Double {
     func ddqToCGFloat() -> CGFloat {
         return CGFloat(self)
     }
@@ -73,7 +73,7 @@ extension Double {
     }
 }
 
-extension Float {
+public extension Float {
     func ddqToCGFloat() -> CGFloat {
         return CGFloat(self)
     }
@@ -99,7 +99,7 @@ extension Float {
     }
 }
 
-extension CGFloat {
+public extension CGFloat {
     func ddqToDouble() -> Double {
         return Double(self)
     }
@@ -117,7 +117,7 @@ extension CGFloat {
     }
 }
 
-extension String {
+public extension String {
     func ddqToInt() -> Int {
         
         let nsstring = self as NSString

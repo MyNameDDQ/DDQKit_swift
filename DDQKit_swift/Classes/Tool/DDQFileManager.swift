@@ -7,7 +7,7 @@
 
 import Foundation
 
-class DDQFileManager: NSObject {
+open class DDQFileManager: NSObject {
     
     static let DDQSaveDefaultdDirectoryName: String = "com.saveDefault"
     
@@ -15,7 +15,7 @@ class DDQFileManager: NSObject {
     private var _directoryPath: String!
     private var _folders: [String] = Array()
     
-    convenience init(directory: String?) {
+    public convenience init(directory: String?) {
         
         self.init()
         if directory == nil {
@@ -44,7 +44,7 @@ class DDQFileManager: NSObject {
         }
     }
     
-    func ddqCreatFile(namespace: String) -> Bool {
+    open func ddqCreatFile(namespace: String) -> Bool {
         if self._folders.contains(namespace) {
             return true
         }
@@ -61,7 +61,7 @@ class DDQFileManager: NSObject {
         return success
     }
     
-    func ddqFilePath(namespace: String) -> String? {
+    open func ddqFilePath(namespace: String) -> String? {
         if !self._folders.contains(namespace) {
             return nil
         }
@@ -69,7 +69,7 @@ class DDQFileManager: NSObject {
         return _handlePath(namespace: namespace)
     }
     
-    func ddqWriteFile(namespace: String, data: Data) {
+    open func ddqWriteFile(namespace: String, data: Data) {
         if self._folders.contains(namespace) {
             guard let originPath = ddqFilePath(namespace: namespace) else {
                 return
@@ -86,7 +86,7 @@ class DDQFileManager: NSObject {
         _sysFileManager.createFile(atPath: _handlePath(namespace: namespace), contents: data, attributes: nil)
     }
     
-    func ddqGetContent(namespace: String) -> Data? {
+    open func ddqGetContent(namespace: String) -> Data? {
         if !self._folders.contains(namespace) {
             return nil
         }

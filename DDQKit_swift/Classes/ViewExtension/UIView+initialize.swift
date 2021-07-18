@@ -30,15 +30,15 @@ public enum DDQMJFooterRefresh: Int {
     case backState
 }
 
-extension UIView {
-    public class func ddqView() -> UIView {
+public extension UIView {
+    class func ddqView() -> UIView {
         
         let view = self.init()
         view.backgroundColor = .ddqBackgroundColor()
         return view
     }
     
-    public class func ddqView(defaultBackgroundColor color: UIColor?) -> UIView {
+    class func ddqView(defaultBackgroundColor color: UIColor?) -> UIView {
         
         let view = self.ddqView()
         if let c = color {
@@ -48,7 +48,7 @@ extension UIView {
         return view
     }
     
-    public func ddqAddSubViews(subViews views: [UIView]?) {
+    func ddqAddSubViews(subViews views: [UIView]?) {
         guard (views?.count ?? 0) > 0 else {
             return
         }
@@ -58,7 +58,7 @@ extension UIView {
         }
     }
     
-    public func ddqRemoveSubViews(subViews views: [UIView]?) {
+    func ddqRemoveSubViews(subViews views: [UIView]?) {
         guard (views?.count ?? 0) > 0 else {
             return
         }
@@ -70,11 +70,11 @@ extension UIView {
         }
     }
     
-    public func ddqRemoveAllSubViews() {
+    func ddqRemoveAllSubViews() {
         self.ddqRemoveSubViews(subViews: self.subviews)
     }
     
-    public func ddqSubviewsWithClass(vClass: AnyClass?) -> [UIView]? {
+    func ddqSubviewsWithClass(vClass: AnyClass?) -> [UIView]? {
         guard vClass != nil else {
             return nil
         }
@@ -86,11 +86,11 @@ extension UIView {
         return filters
     }
     
-    public func ddqRemoveSubViews(viewClass vClass: AnyClass?) {
+    func ddqRemoveSubViews(viewClass vClass: AnyClass?) {
         self.ddqRemoveSubViews(subViews: self.ddqSubviewsWithClass(vClass: vClass))
     }
     
-    public func ddqAddTapGestureRecognizer(action: @escaping(UITapGestureRecognizer) -> Void) -> UITapGestureRecognizer {
+    func ddqAddTapGestureRecognizer(action: @escaping(UITapGestureRecognizer) -> Void) -> UITapGestureRecognizer {
 
         let tap = UITapGestureRecognizer.init { (gr: Any) in
             action(gr as! UITapGestureRecognizer)
@@ -100,7 +100,7 @@ extension UIView {
         return tap
     }
 
-    public func ddqAddLongPressGestureRecognizer(action: @escaping(UILongPressGestureRecognizer) -> Void) -> UILongPressGestureRecognizer {
+    func ddqAddLongPressGestureRecognizer(action: @escaping(UILongPressGestureRecognizer) -> Void) -> UILongPressGestureRecognizer {
 
         let longPress = UILongPressGestureRecognizer.init { (gr: Any) in
             action(gr as! UILongPressGestureRecognizer)
@@ -110,7 +110,7 @@ extension UIView {
         return longPress
     }
 
-    public func ddqAddSwipeGestureRecognizer(action: @escaping(UISwipeGestureRecognizer) -> Void) -> UISwipeGestureRecognizer {
+    func ddqAddSwipeGestureRecognizer(action: @escaping(UISwipeGestureRecognizer) -> Void) -> UISwipeGestureRecognizer {
 
         let swipe = UISwipeGestureRecognizer.init { (gr: Any) in
             action(gr as! UISwipeGestureRecognizer)
@@ -120,7 +120,7 @@ extension UIView {
         return swipe
     }
 
-    public func ddqAddPanGestureRecognizer(action: @escaping(UIPanGestureRecognizer) -> Void) -> UIPanGestureRecognizer {
+    func ddqAddPanGestureRecognizer(action: @escaping(UIPanGestureRecognizer) -> Void) -> UIPanGestureRecognizer {
 
         let pan = UIPanGestureRecognizer.init { (gr: Any) in
             action(gr as! UIPanGestureRecognizer)
@@ -131,8 +131,8 @@ extension UIView {
     }
 }
 
-extension UILabel {
-    public class func ddqLabel() -> UILabel {
+public extension UILabel {
+    class func ddqLabel() -> UILabel {
         
         let label = UILabel()
         label.isUserInteractionEnabled = true
@@ -143,15 +143,15 @@ extension UILabel {
         return label
     }
     
-    public class func ddqLabel(text: String?) -> UILabel {
+    class func ddqLabel(text: String?) -> UILabel {
         return ddqLabel(text: text, font: nil, textColor: nil)
     }
     
-    public class func ddqLabel(text: String?, font: UIFont?) -> UILabel {
+    class func ddqLabel(text: String?, font: UIFont?) -> UILabel {
         return ddqLabel(text: text, font: font, textColor: nil)
     }
 
-    public class func ddqLabel(text: String?, font: UIFont?, textColor: UIColor?) -> UILabel {
+    class func ddqLabel(text: String?, font: UIFont?, textColor: UIColor?) -> UILabel {
         
         let label = ddqLabel()
         label.text = text ?? ""
@@ -165,20 +165,20 @@ extension UILabel {
         return label
     }
     
-    public class func ddqAttributedLabel(attributeText: NSAttributedString?) -> UILabel {
+    class func ddqAttributedLabel(attributeText: NSAttributedString?) -> UILabel {
         
         let label = ddqLabel()
         label.attributedText = attributeText
         return label
     }
 
-    public class func ddqAttributedLabel(text: String?, attributes: [NSAttributedString.Key: Any]?) -> UILabel {
+    class func ddqAttributedLabel(text: String?, attributes: [NSAttributedString.Key: Any]?) -> UILabel {
         
         let attributedText = NSAttributedString.init(string: text ?? "", attributes: attributes ?? ddqAttributes())
         return ddqAttributedLabel(attributeText: attributedText)
     }
 
-    public func ddqLabelSizeThatBounding(options: NSStringDrawingOptions, size: CGSize) -> CGSize {
+    func ddqLabelSizeThatBounding(options: NSStringDrawingOptions, size: CGSize) -> CGSize {
         guard let attributd = self.attributedText else {
             return self.text?.boundingRect(with: size, options: options, attributes: nil, context: nil).size ?? CGSize.zero
         }
@@ -187,10 +187,10 @@ extension UILabel {
     }
 }
 
-extension UIButton {
+public extension UIButton {
     
     typealias DDQButtonActionBlock = (_ button: UIButton) -> Void
-    public class func ddqButton() -> UIButton {
+    class func ddqButton() -> UIButton {
         
         let button = UIButton.init(type: .custom)
         button.backgroundColor = .clear
@@ -254,7 +254,7 @@ extension UIButton {
         return ddqButton(title: nil, image: image, event: event, action: action)
     }
     
-    public class func ddqButton(title: String?, image: UIImage?, backgroundImage: UIImage?, titleColor: UIColor?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
+    class func ddqButton(title: String?, image: UIImage?, backgroundImage: UIImage?, titleColor: UIColor?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
         
         let button = ddqButton()
         button.setTitle(title, for: .normal)
@@ -268,19 +268,19 @@ extension UIButton {
         return button
     }
     
-    public class func ddqButton(title: String?, image: UIImage?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
+    class func ddqButton(title: String?, image: UIImage?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
         return ddqButton(title: title, image: image, backgroundImage: nil, titleColor: nil, event: event, target: target, selector: selector)
     }
     
-    public class func ddqButton(title: String?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
+    class func ddqButton(title: String?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
         return ddqButton(title: title, image: nil, event: event, target: target, selector: selector)
     }
     
-    public class func ddqButton(image: UIImage?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
+    class func ddqButton(image: UIImage?, event: UIButton.Event, target: Any, selector: Selector) -> UIButton {
         return ddqButton(title: nil, image: image, event: event, target: target, selector: selector)
     }
     
-    public func ddqChangeToOriginData() {
+    func ddqChangeToOriginData() {
         guard !self.ddqOriginData.isEmpty else {
             return
         }
@@ -353,8 +353,8 @@ extension UIButton {
     }
 }
 
-extension UITextField {
-    public class func ddqTextField() -> UITextField {
+public extension UITextField {
+    class func ddqTextField() -> UITextField {
         
         let textField = UITextField()
         textField.borderStyle = .roundedRect
@@ -363,7 +363,7 @@ extension UITextField {
         return textField
     }
     
-    public class func ddqTextField(placeholder: String?, placeholderAttrs: [NSAttributedString.Key: Any]?, font: UIFont?, textColor: UIColor?, delegate: UITextFieldDelegate?) -> UITextField {
+    class func ddqTextField(placeholder: String?, placeholderAttrs: [NSAttributedString.Key: Any]?, font: UIFont?, textColor: UIColor?, delegate: UITextFieldDelegate?) -> UITextField {
         
         let textField = ddqTextField()
         if placeholder != nil {
@@ -386,17 +386,17 @@ extension UITextField {
         return textField
     }
     
-    public class func ddqTextField(placeholder: String?, delegate: UITextFieldDelegate?) -> UITextField {
+    class func ddqTextField(placeholder: String?, delegate: UITextFieldDelegate?) -> UITextField {
         return ddqTextField(placeholder: placeholder, placeholderAttrs: nil, font: nil, textColor: nil, delegate: delegate)
     }
     
-    public class func ddqTextField(placeholder: String?) -> UITextField {
+    class func ddqTextField(placeholder: String?) -> UITextField {
         return ddqTextField(placeholder: placeholder, placeholderAttrs: nil, font: nil, textColor: nil, delegate: nil)
     }
 }
 
-extension UIImageView {
-    public class func ddqImageView() -> UIImageView {
+public extension UIImageView {
+    class func ddqImageView() -> UIImageView {
         
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = true
@@ -406,7 +406,7 @@ extension UIImageView {
         return imageView
     }
     
-    public class func ddqImageView(imageName: String?) -> UIImageView {
+    class func ddqImageView(imageName: String?) -> UIImageView {
         
         let imageView = ddqImageView()
         guard imageName != nil else {
@@ -417,7 +417,7 @@ extension UIImageView {
         return imageView
     }
     
-    public class func ddqImageView(image: UIImage?) -> UIImageView {
+    class func ddqImageView(image: UIImage?) -> UIImageView {
         
         let imageView = ddqImageView()
         guard image != nil else {
@@ -428,7 +428,7 @@ extension UIImageView {
         return imageView
     }
     
-    public class func ddqImageView(imageUrl: String?, placeholderName: String?) -> UIImageView {
+    class func ddqImageView(imageUrl: String?, placeholderName: String?) -> UIImageView {
         
         let imageView = ddqImageView()
         guard imageUrl != nil else {
@@ -439,7 +439,7 @@ extension UIImageView {
         return imageView
     }
     
-    public class func ddqImageView(gift images: [Any]?) -> UIImageView {
+    class func ddqImageView(gift images: [Any]?) -> UIImageView {
         
         let imageView = ddqImageView()
         if images?.first is String {
@@ -466,7 +466,7 @@ extension UIImageView {
         }
     }
     
-    public func ddqWithRendering(rendering: UIImage.RenderingMode) -> UIImageView {
+    func ddqWithRendering(rendering: UIImage.RenderingMode) -> UIImageView {
         guard self.image != nil else {
             return self
         }
@@ -477,8 +477,8 @@ extension UIImageView {
     }
 }
 
-extension UIScrollView {
-    public class func ddqScrollView() -> UIScrollView {
+public extension UIScrollView {
+    class func ddqScrollView() -> UIScrollView {
         
         let scrollView = UIScrollView(frame: CGRect.zero)
         if #available(iOS 11.0, *) {
@@ -563,7 +563,7 @@ extension UIScrollView {
         }
     }
     
-    public func ddqEndRefresh(notMore: Bool) {
+    func ddqEndRefresh(notMore: Bool) {
         if self.mj_header?.isRefreshing == true {
             
             self.mj_header?.endRefreshing()
@@ -582,7 +582,7 @@ extension UIScrollView {
         }
     }
     
-    public func ddqRemoveHeaderFooter() {
+    func ddqRemoveHeaderFooter() {
         
         self.mj_header?.endRefreshing()
         self.mj_header = nil
@@ -591,24 +591,24 @@ extension UIScrollView {
     }
 }
 
-extension UITableView {
-    public class var ddqCellIdentifier: String {
+public extension UITableView {
+    class var ddqCellIdentifier: String {
         return NSStringFromClass(Self.ddqCellClass)
     }
     
-    public class var ddqCellClass: AnyClass {
+    class var ddqCellClass: AnyClass {
         return DDQCell.self
     }
     
-    public class var ddqHeaderFooterIdentifier: String {
+    class var ddqHeaderFooterIdentifier: String {
         return "com.ddq.default.headerFooterView"
     }
     
-    public class var ddqHeaderFooterClass: AnyClass {
+    class var ddqHeaderFooterClass: AnyClass {
         return UITableViewHeaderFooterView.self
     }
     
-    public class func ddqTableView(style: Style) -> UITableView {
+    class func ddqTableView(style: Style) -> UITableView {
         
         let tableView = UITableView.init(frame: CGRect.zero, style: style)
         tableView.estimatedRowHeight = 0.0
@@ -628,7 +628,7 @@ extension UITableView {
         return tableView
     }
     
-    public class func ddqTableView(style: Style, delegate: UITableViewDelegate?, dataSource: UITableViewDataSource?) -> UITableView {
+    class func ddqTableView(style: Style, delegate: UITableViewDelegate?, dataSource: UITableViewDataSource?) -> UITableView {
         
         let tableView = ddqTableView(style: style)
         tableView.delegate = delegate ?? nil
@@ -644,24 +644,24 @@ extension UITableView {
     }
 }
 
-extension UICollectionView {
-    public class var ddqItemIdentifier: String {
+public extension UICollectionView {
+    class var ddqItemIdentifier: String {
         return NSStringFromClass(Self.ddqItemClass)
     }
     
-    public class var ddqItemClass: AnyClass {
+    class var ddqItemClass: AnyClass {
         return DDQItem.self
     }
     
-    public class var ddqHeaderFooterIdentifier: String {
+    class var ddqHeaderFooterIdentifier: String {
         return "com.ddq.default.reuseView"
     }
     
-    public class var ddqHeaderFooterClass: AnyClass {
+    class var ddqHeaderFooterClass: AnyClass {
         return UICollectionReusableView.self
     }
     
-    public class func ddqDefaultFlowLayout() -> UICollectionViewFlowLayout {
+    class func ddqDefaultFlowLayout() -> UICollectionViewFlowLayout {
         
         let flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.minimumLineSpacing = 0
@@ -670,7 +670,7 @@ extension UICollectionView {
         return flowLayout
     }
     
-    public class func ddqCollectionView(flowLayout: UICollectionViewFlowLayout?) -> UICollectionView {
+    class func ddqCollectionView(flowLayout: UICollectionViewFlowLayout?) -> UICollectionView {
         
         let collectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: flowLayout ?? ddqDefaultFlowLayout())
         collectionView.showsVerticalScrollIndicator = false
@@ -684,7 +684,7 @@ extension UICollectionView {
         return collectionView
     }
     
-    public class func ddqCollectionView(layout: UICollectionViewFlowLayout?, delegate: UICollectionViewDelegate?, dataSource: UICollectionViewDataSource?) -> UICollectionView {
+    class func ddqCollectionView(layout: UICollectionViewFlowLayout?, delegate: UICollectionViewDelegate?, dataSource: UICollectionViewDataSource?) -> UICollectionView {
         
         let collectionView = ddqCollectionView(flowLayout: layout)
         collectionView.delegate = delegate ?? nil
@@ -700,12 +700,12 @@ extension UICollectionView {
     }
 }
 
-extension DDQTextView {
+public extension DDQTextView {
     public var ddqBeginningRect: CGRect {
         return self.caretRect(for: self.beginningOfDocument)
     }
     
-    public class func ddqTextView(font: UIFont?, textColor: UIColor?, delegate: UITextViewDelegate?, container: NSTextContainer?) -> DDQTextView {
+    class func ddqTextView(font: UIFont?, textColor: UIColor?, delegate: UITextViewDelegate?, container: NSTextContainer?) -> DDQTextView {
         
         let textView: DDQTextView!
         if container != nil {
@@ -719,11 +719,11 @@ extension DDQTextView {
         return textView
     }
     
-    public class func ddqTextView() -> DDQTextView {
+    class func ddqTextView() -> DDQTextView {
         return ddqTextView(font: nil, textColor: .ddqTextColor(), delegate: nil, container: nil)
     }
     
-    public class func ddqTextView(font: UIFont?, textColor: UIColor?) -> DDQTextView {
+    class func ddqTextView(font: UIFont?, textColor: UIColor?) -> DDQTextView {
         return ddqTextView(font: font, textColor: textColor, delegate: nil, container: nil)
     }
 }

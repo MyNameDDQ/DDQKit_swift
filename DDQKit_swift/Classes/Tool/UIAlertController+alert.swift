@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
     // 可以用在添加了textField等操作后
     // 当返回false时不会自动弹出

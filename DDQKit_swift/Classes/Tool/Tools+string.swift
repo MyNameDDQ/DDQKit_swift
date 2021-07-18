@@ -12,14 +12,7 @@ import SAMKeychain
 import YYKit
 import UIKit
 
-public protocol TimeStampHandler {}
-public protocol RegExpHandler {}
-public protocol URLHandler {}
-public protocol ProjectHandler {}
-public protocol DateFormatterHandler {}
-public protocol ImageHandler {}
-
-extension String {
+public extension String {
     func ddqTrimmingWhitespacesAndNewlines() -> String {
         return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
@@ -50,7 +43,7 @@ extension String {
     }
 }
 
-extension String: TimeStampHandler {
+public extension String {
     enum DDQTimeStampType: Int {
         
         case second
@@ -76,7 +69,7 @@ extension String: TimeStampHandler {
     }
 }
 
-extension String: RegExpHandler {
+public extension String {
     func ddqIsPhoneNumber() -> Bool {
         
         let string = self.ddqTrimmingWhitespacesAndNewlines()
@@ -86,7 +79,7 @@ extension String: RegExpHandler {
     }
 }
 
-extension String: URLHandler {
+public extension String {
     func ddqGetUrlKeyValues() -> [String: String] {
         
         let items = ddqUrlHaveQueryValue()
@@ -179,7 +172,7 @@ extension String: URLHandler {
     }
 }
 
-extension String: ProjectHandler {
+public extension String {
     static func ddqGetAppVersion() -> String {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
     }
@@ -423,7 +416,7 @@ extension String: ProjectHandler {
     }
 }
 
-extension String: DateFormatterHandler {
+public extension String {
     func ddqToDateString(formatter: String?) -> String {
         
         let date = Date(timeIntervalSince1970: self.ddqToDouble())
@@ -474,7 +467,7 @@ extension String: DateFormatterHandler {
     }
 }
 
-extension String: ImageHandler {
+public extension String {
     func ddqToQRCodeImage(size: CGSize) -> UIImage? {
         
         let filter = CIFilter.init(name: "CIQRCodeGenerator")

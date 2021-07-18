@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
     enum DDQArrayOperation {
         
         case aig // append insert getObjc
@@ -254,7 +254,7 @@ extension Array where Element: Equatable {
     }
 }
 
-extension Array where Element: Comparable {
+public extension Array where Element: Comparable {
     func ddqSortedArray(ascending: Bool) -> [Element] {
         
         return self.sorted { (objc1, objc2) -> Bool in
@@ -267,7 +267,7 @@ extension Array where Element: Comparable {
     }
 }
 
-extension Array where Element == Int {
+public extension Array where Element == Int {
     func ddqIsContinue() -> Bool {
                 
         let sortedArray = self.ddqSortedArray(ascending: true)

@@ -7,25 +7,25 @@
 
 import UIKit
 
-class DDQCellModel: DDQModel {
+open class DDQCellModel: DDQModel {
 
     var ddqReuseHeight: CGFloat = 0.0
     var ddqCellWidth: CGFloat = 0.0
 }
 
-struct DDQCellSeparatorMargin {
+public struct DDQCellSeparatorMargin {
     
     var leftMargin: CGFloat
     var rightMargin: CGFloat
 }
 
-extension DDQCellSeparatorMargin {
+public extension DDQCellSeparatorMargin {
     static public var Zero: DDQCellSeparatorMargin {
         return DDQCellSeparatorMargin(leftMargin: 0.0, rightMargin: 0.0)
     }
 }
 
-enum DDQCellSeparatorStyle {
+public enum DDQCellSeparatorStyle {
     
     case none
     case top
@@ -36,7 +36,7 @@ open class DDQCell: UITableViewCell {
 
     private var ddqSeparator: UIView = UIView(frame: CGRect.zero)
     
-    var ddqCellDataSource: DDQCellModel? {
+    open var ddqCellDataSource: DDQCellModel? {
         didSet {
             
             self.ddqCellDidUpdateData()
@@ -45,25 +45,25 @@ open class DDQCell: UITableViewCell {
         }
     }
     
-    var ddqSeparatorStyle: DDQCellSeparatorStyle = DDQCellSeparatorStyle.none {
+    open var ddqSeparatorStyle: DDQCellSeparatorStyle = DDQCellSeparatorStyle.none {
         didSet {
             self.ddqCellSetNeedsLayout()
         }
     }
     
-    var ddqSeparatorMargin: DDQCellSeparatorMargin = DDQCellSeparatorMargin.Zero {
+    open var ddqSeparatorMargin: DDQCellSeparatorMargin = DDQCellSeparatorMargin.Zero {
         didSet {            
             self.ddqCellSetNeedsLayout()
         }
     }
     
-    var ddqSeparatorColor: UIColor = UIColor.ddqSeparatorColor() {
+    open var ddqSeparatorColor: UIColor = UIColor.ddqSeparatorColor() {
         didSet {
             self.ddqSeparator.backgroundColor = self.ddqSeparatorColor
         }
     }
     
-    var ddqSeparatorHeight: CGFloat = 0.5 {
+    open var ddqSeparatorHeight: CGFloat = 0.5 {
         didSet {
             self.ddqCellSetNeedsLayout()
         }

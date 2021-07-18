@@ -22,7 +22,7 @@ open class DDQAutoLayoutProperty: NSObject {
     open var aligment: DDQAutoLayoutAligment = .left
     open var layoutView: UIView?
     
-    convenience init(view: UIView, aligment: DDQAutoLayoutAligment) {
+    public convenience init(view: UIView, aligment: DDQAutoLayoutAligment) {
         
         self.init()
         self.layoutView = view

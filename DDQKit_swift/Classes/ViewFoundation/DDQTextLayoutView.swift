@@ -13,7 +13,7 @@ open class DDQTextLayoutView: DDQBasalLayoutView {
     open var titleLabel: UILabel = .ddqLabel()
     open var subTitleLabel: UILabel = .ddqLabel()
     
-    convenience init(title: String?, subTitle: String?) {
+    public convenience init(title: String?, subTitle: String?) {
         
         self.init(frame: CGRect.zero)
         self.titleLabel.text = title

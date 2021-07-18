@@ -8,7 +8,7 @@
 import Foundation
 import SwiftyJSON
 
-extension Dictionary where Key == String {
+public extension Dictionary where Key == String {
     private func _toJson() -> JSON {
         return JSON.init(self)
     }

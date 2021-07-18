@@ -39,7 +39,7 @@ open class DDQImageTextLayoutView: DDQBasalLayoutView {
         self.titleLabel.attributedText = attributedTitle
     }
         
-    convenience init(title: String?, image: UIImage?) {
+    public convenience init(title: String?, image: UIImage?) {
     
         self.init(frame: .zero)
         self.imageView.image = image

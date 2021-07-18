@@ -80,7 +80,7 @@ public extension UIColor {
 }
 
 /// 自定义一些常用的颜色
-extension UIColor {
+public extension UIColor {
     class func ddqTextColor() -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor.init { (collection) -> UIColor in

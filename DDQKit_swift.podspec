@@ -19,8 +19,7 @@ Pod::Spec.new do |s|
   s.swift_version = '4.2'
   s.source_files = 'DDQKit_swift/Classes/**/*'
   s.requires_arc = true
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
-  s.exclude_files = 'DDQKit_swift/Classes/*.plist'
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64 armv7 x86_64' }
 
   s.dependency 'SwiftyJSON'
   s.dependency 'HandyJSON'

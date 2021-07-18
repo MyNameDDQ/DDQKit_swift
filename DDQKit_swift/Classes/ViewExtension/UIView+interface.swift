@@ -155,7 +155,7 @@ public extension UIView {
     var ddqLayoutSafeInsets: UIEdgeInsets {
        
         var insets = UIEdgeInsets()
-        let keyWindow = UIApplication.shared.keyWindow
+        let keyWindow = ddqKeyWindow
         if #available(iOS 11.0, *) {
             insets = self.safeAreaInsets
         } else {

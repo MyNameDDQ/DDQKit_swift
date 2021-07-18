@@ -30,13 +30,11 @@ open class DDQBasalLayoutView: DDQView {
     open var mainView: UIView? {
         willSet {
             self.mainView?.removeFromSuperview()
-//            NSLog("main -- 11：%@", self.mainView ?? "")
         }
         
         didSet {
             if self.mainView != nil {
                 self.addSubview(self.mainView!)
-//                NSLog("main -- 22：%@", self.mainView ?? "")
             }
         }
     }
@@ -91,7 +89,7 @@ open class DDQBasalLayoutView: DDQView {
         }
     }
         
-    convenience init(mainView: UIView, subView: UIView) {
+    public convenience init(mainView: UIView, subView: UIView) {
         
         self.init()
         self.mainView = mainView
